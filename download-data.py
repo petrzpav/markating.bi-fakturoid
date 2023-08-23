@@ -70,7 +70,7 @@ def download_all(type, since):
     print(json.dumps(all_data))
 
 parser = argparse.ArgumentParser(
-    prog='FakturoidDownloader',
+    prog='download-data.py',
     description='Download requested data from Fakturoid API and prints them to the output.',
 )
 parser.add_argument(

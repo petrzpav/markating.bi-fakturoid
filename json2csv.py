@@ -49,11 +49,14 @@ def json_to_csv_output(json_data):
     writer.writeheader()
     for row in flattened_data:
         writer.writerow(row)
-    # Move the cursor to the beginning of the "file" and print its contents
+    # Move the cursor to the beginning of the file and print its contents
     output.seek(0)
     print(output.read())
 
-# Read JSON from stdin
+parser = argparse.ArgumentParser(
+    prog='json2csv.py',
+    description='Read json data from stdin and convert it into csv. Can handle inner dict and inner lists recursively.',
+)
+args = parser.parse_args()
 json_str = sys.stdin.read()
-# Convert and output to console
 json_to_csv_output(json.loads(json_str))
