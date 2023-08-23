@@ -3,6 +3,7 @@
 import csv
 import json
 import sys
+import argparse
 from io import StringIO
 
 def flatten(json_object, parent_key='', sep='.'):
