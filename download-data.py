@@ -48,6 +48,7 @@ def download_all(type, since):
         base64string = base64.b64encode(bytes('%s:%s' % (auth_data[1], auth_data[2]), 'ascii'))
         request.add_header("Authorization", "Basic %s" % base64string.decode('utf-8'))
         result = urllib.request.urlopen(request)
+        # print(result.info())
         data = json.loads(result.read().decode("utf-8"))
         all_data += data
         api_url = None
